@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huella Solidaria</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <!-- Añado logo huella solidaria -->
+        <nav class="navbar navbar-expand-lg navbar-apple">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="https://cdn-icons-png.flaticon.com/512/8971/8971659.png" alt="Logo Huella Solidaria"
+                        width="30" height="30" class="me-2">
+                    Huella Solidaria</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Productos
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                <a class="dropdown-item" href="#">Producto 1</a>
+                                <a class="dropdown-item" href="#">Producto 2</a>
+                                <a class="dropdown-item" href="#">Producto 3</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Servicios
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">Servicio A</a>
+                                <a class="dropdown-item" href="#">Servicio B</a>
+                                <a class="dropdown-item" href="#">Servicio C</a>
+                            </div>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Fundaciones
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                            <a class="dropdown-item" href="https://www.garrasypatas.cl/" target="_blank">
+                                Fundación Garras y Patas
+                            </a>
+                            <a class="dropdown-item" href="https://fundacionadopta.cl/" target="_blank">
+                                Fundación Adopta
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="https://fundacionhuellaanimal.cl/" target="_blank">
+                                Fundación Huella Animal
+                            </a>
+                        </div>
+                    </li>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contacto">Contacto</a>
+                        </li>
+                    </ul>
+
+                    <div class="ms-auto d-flex align-items-center">
+                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#loginModal"
+                            data-bs-placement="bottom" title="Iniciar Sesión">
+                            <i class="bi bi-person-circle" style="font-size: 1.5rem;"></i>
+                        </a>
+                        <a href="#" class="btn btn-light ms-2 d-inline-block" data-bs-toggle="modal"
+                            data-bs-target="#registroModal">
+                            Registrarse
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- OFERTAS -->
+    <main>
+        <div class="container mt-4">
+
+            <section id="ofertas" class="mb-5">
+                <div class="container">
+                    <h2 class="text-center mb-4">Ofertas</h2>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+
+                                <!-- Cambio imágenes, texto, estilo de sección 'Oferta'. Unifico el tamaño y centrado de productos de estas cards (acorde al CSS) -->
+
+                                <img class="card-img-top product-img p-3"
+                                    src="https://ahorropuntopet.cl/wp-content/uploads/2023/03/FATV0001.png"
+                                    alt="Saco de comida para gato">
+                                <div class="card-body d-flex flex-column">
+                                    <h6 class="card-subtitle mb-2 text-muted">Nutrique</h6>
+                                    <h5 class="card-title">Nutrique Baby Cat & Kitten Pavo 2Kg</h5>
+                                    <div class="precio-container">
+                                        <del class="text-muted">$22.500</del>
+                                        <span class="precio-oferta h4 fw-bold ms-2">$17.400</span>
+                                    </div>
+                                    <div class="mt-auto">
+                                        <a href="#" class="btn btn-primary w-100 mb-2">Comprar ahora</a>
+                                        <a href="#" class="btn btn-outline-secondary w-100">Añadir al carrito</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <img class="card-img-top product-img p-3"
+                                    src="https://ahorropuntopet.cl/wp-content/uploads/2023/08/Weight_Control_FELINE_CL_Med._Res.___Basic.jpg"
+                                    alt="Saco de comida para gato castrado">
+                                <div class="card-body d-flex flex-column">
+                                    <h6 class="card-subtitle mb-2 text-muted">Royal Canin</h6>
+                                    <h5 class="card-title">Royal Canin Gato Adulto Castrados Weight Control 1.5Kg (Seco)
+                                    </h5>
+                                    <div class="precio-container">
+                                        <del class="text-muted">$20.000</del>
+                                        <span class="precio-oferta h4 fw-bold ms-2">$17.580</span>
+                                    </div>
+                                    <div class="mt-auto">
+                                        <a href="#" class="btn btn-primary w-100 mb-2">Comprar ahora</a>
+                                        <a href="#" class="btn btn-outline-secondary w-100">Añadir al carrito</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <img class="card-img-top product-img p-3"
+                                    src="https://ahorropuntopet.cl/wp-content/uploads/2025/08/Nomade-Senior-15kg.jpg"
+                                    alt="Saco de comida para perro senior">
+                                <div class="card-body d-flex flex-column">
+                                    <h6 class="card-subtitle mb-2 text-muted">Nómade</h6>
+                                    <h5 class="card-title">Nomade Senior 15Kg</h5>
+                                    <div class="precio-container">
+                                        <del class="text-muted">$35.000</del>
+                                        <span class="precio-oferta h4 fw-bold ms-2">$32.000</span>
+                                    </div>
+                                    <div class="mt-auto">
+                                        <a href="#" class="btn btn-primary w-100 mb-2">Comprar ahora</a>
+                                        <a href="#" class="btn btn-outline-secondary w-100">Añadir al carrito</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Añado my-5 en el contenedor principal para dar separación vertical-->
+            <div id="carouselExampleIndicators" class="carousel slide my-5">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <!-- Slide 1  video -->
+                    <div class="carousel-item active">
+                        <div class="ratio ratio-16x9 carousel-media">
+                            <iframe src="https://www.youtube.com/embed/7VJM_oCHdOc"
+                                title="Fundación Rescatando Patitas - Apoyando comunidades"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen class="rounded-3"></iframe>
+                        </div>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Apoyando comunidades</h5>
+                            <p>Donamos el 5% de cada venta a nuestras fundaciones aliadas en Chile.</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 imagen -->
+                    <div class="carousel-item">
+                        <div class="ratio ratio-16x9 carousel-media">
+                            <img src="https://images.pexels.com/photos/26834696/pexels-photo-26834696.jpeg" class="rounded-3"
+                                alt="Voluntariado activo">
+                        </div>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Voluntariado activo</h5>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 imagen -->
+                    <div class="carousel-item">
+                        <div class="ratio ratio-16x9 carousel-media">
+                            <img src="https://images.pexels.com/photos/12195433/pexels-photo-12195433.jpeg" class="rounded-3"
+                                alt="Impacto ambiental">
+                        </div>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Impacto ambiental</h5>
+                        </div>
+                    </div>
+                    </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+
+    </main>
+
+    <footer id="contacto" class="bg-light text-center text-lg-start mt-5">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Huella Solidaria</h5>
+                    <p>
+                        Trabajando por un impacto positivo en nuestras comunidades.
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Enlaces útiles</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#" class="text-dark">Inicio</a></li>
+                        <li><a href="#" class="text-dark">Acerca de</a></li>
+                        <li><a href="#" class="text-dark">Proyectos</a></li>
+                        <li><a href="#" class="text-dark">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Contáctanos</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#" class="text-dark">Email: info@huellasolidaria.org</a></li>
+                        <li><a href="#" class="text-dark">Teléfono: +56 9 1234 5678</a></li>
+                        <li><a href="#" class="text-dark">Dirección: Quilpué, Valparaíso, Chile</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            &copy; 2025 Huella Solidaria. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3" id="loginForm">
+                        <div class="col-md-12">
+                            <label for="loginUsername" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="loginUsername" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="loginPassword" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                        <div class="col-md-12">
+                            <a href="#" class="form-label">¿Olvidaste tu contraseña?</a>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <div id="mensajeErrorLogin" class="alert alert-danger d-none"></div>
+                        </div>
+                        <div class="col-md-12 mt-3">
+                            <button class="btn btn-light" id="btnIniciarLogin" type="submit">Iniciar Sesión</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="registroModal" tabindex="-1" aria-labelledby="registroModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registroModalLabel">Crear una Cuenta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3" id="form2">
+                        <div class="col-md-6">
+                            <label for="registroNombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="registroNombre" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="registroApellidos" class="form-label">Apellidos</label>
+                            <input type="text" class="form-control" id="registroApellidos" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="registroRUT" class="form-label">RUT</label>
+                            <input type="text" class="form-control" id="registroRUT" required>
+                            <div class="form-text"> Por favor proporciona un RUT válido. Sin puntos y con guión.
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="registroUsername" class="form-label">Username</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="inputGroupPrepend3">@</span>
+                                <input type="text" class="form-control" id="registroUsername" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="registroRegion" class="form-label">Región</label>
+                            <select class="form-select" id="registroRegion" required>
+                                <option selected disabled value="">Seleccionar...</option>
+                                <option>Región de Arica y Parinacota</option>
+                                <option>Región de Tarapacá</option>
+                                <option>Región de Antofagasta</option>
+                                <option>Región de Atacama</option>
+                                <option>Región de Coquimbo</option>
+                                <option>Región de Valparaíso</option>
+                                <option>Región Metropolitana de Santiago</option>
+                                <option>Región del Libertador General Bernardo O'Higgins</option>
+                                <option>Región del Maule</option>
+                                <option>Región de Ñuble</option>
+                                <option>Región del Biobío</option>
+                                <option>Región de La Araucanía</option>
+                                <option>Región de Los Ríos</option>
+                                <option>Región de Los Lagos</option>
+                                <option>Región de Aysén</option>
+                                <option>Región de Magallanes y de la Antártica Chilena</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="registroCiudad" class="form-label">Ciudad</label>
+                            <input type="text" class="form-control" id="registroCiudad" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="registroTelefono" class="form-label">Teléfono</label>
+                            <input type="text" class="form-control" id="registroTelefono" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="registroPassword" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="registroPassword" required>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck3" required>
+                                <label class="form-check-label" for="invalidCheck3">
+                                    Acepto los términos y condiciones
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <div id="mensajeErrorForm2" class="alert alert-danger d-none"></div>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <button class="btn btn-light" id="btnRegistrarForm2" type="submit">Registrarse</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="reglas.js"></script>
+</body>
+
+</html>
