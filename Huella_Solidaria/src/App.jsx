@@ -1,19 +1,23 @@
 import React from 'react';
 
 // Estilos
-import './App.css'; 
+import './App.css';
 
-// Importación de todos los componentes
-
+// Importación componentes
 import Header from './components/Header';
 import Productos from './components/Productos';
 import Carousel from './components/Carousel';
 import Footer from './components/Footer';
 import RegistroModal from './components/RegistroModal';
-import LoginModal from './components/LoginModal'; 
-import Churu from './components/Churu';  // Importo componente producto Churu
+import LoginModal from './components/LoginModal';
 
-// Definición de los datos de los productos usando imágenes locales en vez de los links externos
+// Productos individuales
+import Churu from './components/Churu';
+import NutriqueBabyCat from './components/NutriqueBabyCat';
+import RoyalWeightControl from './components/RoyalWeightControl';
+import NomadeSenior from './components/NomadeSenior';
+
+// Definición de los datos de los productos usando imágenes locales no links (transformdo a react)
 
 const productosEnOferta = [
   {
@@ -38,10 +42,9 @@ const productosEnOferta = [
     categoria: 'Nómade',
     titulo: 'Nomade Senior 15Kg',
     precioAntiguo: '35.000',
-    precioNuevo: '32.000'
+    precioNuevo: '30.000'
   }
 ];
-
 
 function App() {
   return (
@@ -50,14 +53,29 @@ function App() {
 
       <main>
         <div className="container mt-4">
+          {/* Ofertas renderizadas en React con .map() */}
           <Productos productos={productosEnOferta} />
+
+          {/* Catálogo de componentes individuales */}
+          <section className="my-5">
+            <h2 className="mb-4">Catálogo</h2>
+            <div className="row">
+              <Churu />
+              <NutriqueBabyCat />
+              <RoyalWeightControl />
+              <NomadeSenior />
+              {/* Agrega aquí los otros 8 hasta completar 12 */}
+            </div>
+          </section>
+
+          {/* Carrusel ya existente */}
           <Carousel />
         </div>
       </main>
 
       <Footer />
 
-      {/* 2. Añadir ambos modales al final */}
+      {/* Modales */}
       <RegistroModal />
       <LoginModal />
     </>
