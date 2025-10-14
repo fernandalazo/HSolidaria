@@ -3,7 +3,7 @@ import ProductCard from './cards/ProductCard';
 
 export default function NomadeSenior({ onAdd }) {
   const data = {
-    id: 203,
+    id: 3,
     imagenSrc: '/img/nomade_senior.webp',
     categoria: 'Nómade',
     titulo: 'Nomade Senior 15Kg',

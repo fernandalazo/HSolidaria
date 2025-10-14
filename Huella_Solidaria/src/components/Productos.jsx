@@ -1,4 +1,4 @@
-//Paso productos antiguos a React
+// Convierto productos antiguos a React (que no sean links de imagenes)
 // Mantuve el array en App.jsx y lo pase como prop a un componente 'Productos' que renderiza tarjetas
 
 

@@ -3,7 +3,7 @@ import ProductCard from './cards/ProductCard';
 
 export default function Churu({ onAdd }) {
   const data = {
-    id: 101,
+    id: 4,
     imagenSrc: '/img/churu_gato_pollo.webp',
     categoria: 'Churu',
     titulo: 'Churu Gato Pollo & Pollo Ostión (10 und)',

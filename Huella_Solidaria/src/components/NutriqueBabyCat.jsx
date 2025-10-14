@@ -3,7 +3,7 @@ import ProductCard from './cards/ProductCard';
 
 export default function NutriqueBabyCat({ onAdd }) {
   const data = {
-    id: 201,
+    id:  1,
     imagenSrc: '/img/nutrique_baby_cat.webp',
     categoria: 'Nutrique',
     titulo: 'Nutrique Baby Cat & Kitten Pavo 2Kg',
