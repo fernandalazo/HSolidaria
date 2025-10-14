@@ -4,18 +4,21 @@ import React from 'react';
 import './App.css'; 
 
 // Importación de todos los componentes
+
 import Header from './components/Header';
 import Productos from './components/Productos';
 import Carousel from './components/Carousel';
 import Footer from './components/Footer';
 import RegistroModal from './components/RegistroModal';
-import LoginModal from './components/LoginModal'; // <-- 1. Importar el nuevo componente
+import LoginModal from './components/LoginModal'; 
+import Churu from './components/Churu';  // Importo componente producto Churu
 
-// Definición de los datos de los productos
+// Definición de los datos de los productos usando imágenes locales en vez de los links externos
+
 const productosEnOferta = [
   {
     id: 1,
-    imagen: 'https://ahorropuntopet.cl/wp-content/uploads/2023/03/FATV0001.png',
+    imagen: '/img/nutrique_baby_cat.webp',
     categoria: 'Nutrique',
     titulo: 'Nutrique Baby Cat & Kitten Pavo 2Kg',
     precioAntiguo: '22.500',
@@ -23,7 +26,7 @@ const productosEnOferta = [
   },
   {
     id: 2,
-    imagen: 'https://ahorropuntopet.cl/wp-content/uploads/2023/08/Weight_Control_FELINE_CL_Med._Res.___Basic.jpg',
+    imagen: '/img/royal_weight_control.webp',
     categoria: 'Royal Canin',
     titulo: 'Royal Canin Gato Adulto Castrados Weight Control 1.5Kg (Seco)',
     precioAntiguo: '20.000',
@@ -31,13 +34,14 @@ const productosEnOferta = [
   },
   {
     id: 3,
-    imagen: 'https://ahorropuntopet.cl/wp-content/uploads/2025/08/Nomade-Senior-15kg.jpg',
+    imagen: '/img/nomade_senior.webp',
     categoria: 'Nómade',
     titulo: 'Nomade Senior 15Kg',
     precioAntiguo: '35.000',
     precioNuevo: '32.000'
   }
 ];
+
 
 function App() {
   return (
