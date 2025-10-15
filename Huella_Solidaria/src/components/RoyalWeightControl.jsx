@@ -5,7 +5,7 @@ export default function RoyalWeightControl({ onAdd }) {
   const data = {
     id: 2,
     imagenSrc: '/img/royal_weight_control.webp',
-    categoria: 'Royal Canin',
+    categoria: 'Gato',
     titulo: 'Royal Canin Gato Adulto Castrados Weight Control 1.5Kg (Seco)',
     precioAntiguo: '20.000',
     precioNuevo: '17.580'

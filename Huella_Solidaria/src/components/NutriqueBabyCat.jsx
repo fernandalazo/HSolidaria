@@ -5,7 +5,7 @@ export default function NutriqueBabyCat({ onAdd }) {
   const data = {
     id:  1,
     imagenSrc: '/img/nutrique_baby_cat.webp',
-    categoria: 'Nutrique',
+    categoria: 'Gato',
     titulo: 'Nutrique Baby Cat & Kitten Pavo 2Kg',
     precioAntiguo: '22.500',
     precioNuevo: '17.400'

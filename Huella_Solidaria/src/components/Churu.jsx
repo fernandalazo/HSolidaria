@@ -5,7 +5,7 @@ export default function Churu({ onAdd }) {
   const data = {
     id: 4,
     imagenSrc: '/img/churu_gato_pollo.webp',
-    categoria: 'Churu',
+    categoria: 'Gato',
     titulo: 'Churu Gato Pollo & Pollo Ostión (10 und)',
     precioAntiguo: '5.990',
     precioNuevo: '5.490'

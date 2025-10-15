@@ -5,7 +5,7 @@ export default function NomadeSenior({ onAdd }) {
   const data = {
     id: 3,
     imagenSrc: '/img/nomade_senior.webp',
-    categoria: 'Nómade',
+    categoria: 'Perro',
     titulo: 'Nomade Senior 15Kg',
     precioAntiguo: '35.000',
     precioNuevo: '32.000'
