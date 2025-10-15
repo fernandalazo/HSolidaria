@@ -62,13 +62,9 @@ function App() {
 
       <main>
         <div className="container mt-4">
-          {/* Ofertas renderizadas en React desde el array productosEnOferta */}
-          <Productos productos={productosEnOferta} />
-
-          {/* Catálogo de componentes (productos) individuales */}
           <section className="my-5">
-            <h2 className="mb-4">Catálogo</h2>
-            <div className="row">
+            <h2 className="mb-4">Ofertas</h2>
+            <div className="row g-3">
               <Churu />
               <NutriqueBabyCat />
               <RoyalWeightControl />
@@ -84,10 +80,10 @@ function App() {
             </div>
           </section>
 
-          {/* Carrusel existente */}
           <Carousel />
         </div>
       </main>
+
 
       <Footer />
 
