@@ -5,7 +5,7 @@ import ProductCard from './cards/ProductCard';
 export default function VitakraftPoesiePescado({ onAdd }) {
   const data = {
     id: 9,
-    imagenSrc: '/img/Vitakraft-Poesie-Creation-Pescado.webp',
+    imagenSrc: '/img/vitakraft-poesie.webp',
     categoria: 'Gato',
     titulo: 'Poésie Création Pescado 85g',
     precioAntiguo: '1.300',

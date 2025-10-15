@@ -5,7 +5,7 @@ import ProductCard from './cards/ProductCard';
 export default function ZeusBetterBones({ onAdd }) {
   const data = {
     id: 8,
-    imagenSrc: '/img/Zeus-Better-Bones-Duck-Cranberry.webp',
+    imagenSrc: '/img/zeus_better_bones_duck_cranberry.webp',
     categoria: 'Perro',
     titulo: 'Better Bones Duck & Cranberry 219g',
     precioAntiguo: '3.750',
