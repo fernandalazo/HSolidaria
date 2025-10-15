@@ -1,12 +1,11 @@
-// src/components/VitalcanUrinary.jsx
 import React from 'react';
 import ProductCard from './cards/ProductCard';
 
 export default function VitalcanUrinary({ onAdd }) {
   const data = {
-    id: 10,
-    imagenSrc: '/img/Gato-urinary.webp',
-    categoria: 'Gato',
+    id: 308,
+    imagenSrc: '/img/vitalcan_urinary.webp',
+    categoria: 'Vitalcan Therapy',
     titulo: 'Feline Urinary Health 2Kg',
     precioAntiguo: '23.900',
     precioNuevo: '20.100'
