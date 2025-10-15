@@ -178,3 +178,15 @@ footer .p-3 {
     background: linear-gradient(90deg, #e6d7f2, #c8a2c8) !important;
     color: #4a2c4a;
 }
+
+/* Compactar tarjetas y badge */
+.card .card-body { padding: 0.9rem 0.9rem; }
+.badge { font-size: 0.75rem; padding: 0.35em 0.5em; }
+
+/* Mantener imágenes contenidas */
+.product-img { object-fit: contain; }
+
+/* (Opcional) Limitar ancho visual en pantallas grandes */
+@media (min-width: 1200px) {
+  .row.g-3 > [class*="col-lg-3"] .card { max-width: 100%; margin-inline: auto; }
+}
