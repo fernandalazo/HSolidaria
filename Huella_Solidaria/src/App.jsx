@@ -56,15 +56,34 @@ const productosEnOferta = [
 ];
 
 function App() {
+
+  const {
+    data,
+    cart,
+    addToCart
+  } = useCart()
   return (
     <>
-      <Header />
+      <Header
+      data={data} 
+      cart={cart}
+      addToCart={addToCart}
+      />
 
       <main>
         <div className="container mt-4">
           <section className="my-5">
             <h2 className="mb-4">Ofertas</h2>
             <div className="row g-3">
+
+              {data.map(data => (
+                <Data
+                key={data.id}
+                data={data}
+                addToCart={addToCart}
+                />
+              ))}
+
               <Churu />
               <NutriqueBabyCat />
               <RoyalWeightControl />

@@ -1,7 +1,7 @@
 // Convierto productos antiguos a React (que no sean links de imagenes)
 // Mantuve el array en App.jsx y lo pase como prop a un componente 'Productos' que renderiza tarjetas
 
-
+/*ESTE NO ES UN COMPONENTE DE RUTA, SOLO RENDERIZA TARJETAS DE PRODUCTOS*/
 import React from 'react';
 import ProductCard from './cards/ProductCard'; // Plantilla reutilizable
 

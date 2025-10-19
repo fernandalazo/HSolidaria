@@ -6,23 +6,23 @@ function Header() {
       <nav className="navbar navbar-expand-lg navbar-apple">
         <div className="container-fluid">
           <a className="navbar-brand d-flex align-items-center" href="#">
-            <img 
-              src="https://cdn-icons-png.flaticon.com/512/8971/8971659.png" 
-              alt="Logo Huella Solidaria" 
-              width="30" 
-              height="30" 
-              className="me-2" 
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/8971/8971659.png"
+              alt="Logo Huella Solidaria"
+              width="30"
+              height="30"
+              className="me-2"
             />
             Huella Solidaria
           </a>
 
-          <button 
-            className="navbar-toggler" 
-            type="button" 
-            data-bs-toggle="collapse" 
-            data-bs-target="#navbarSupportedContent" 
-            aria-controls="navbarSupportedContent" 
-            aria-expanded="false" 
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
@@ -80,11 +80,51 @@ function Header() {
                 Registrarse
               </a>
             </div>
+
+            <div className="carrito">
+              <img className="img-fluid" src="/img/carrito.png" alt="imagen carrito" />
+              <div id="cart" className="bg-white p-3">
+                {isEmpty ? (
+                  <p className="text-center">El carrito está vacío</p>
+                ) : (
+                  <>
+                    <table className="w-100">
+                      <thead>
+                        <tr>
+                          <th>Imagen</th>
+                          <th>Categoria</th>
+                          <th>Título</th>
+                          <th>Precio Antiguo</th>
+                          <th>Precio Nuevo</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {cart.map(data => (
+                          <tr key={data.id}>
+                            <td>
+                              <img className="img-fluid" src={`/img/${data.imagenSrc}.webp`} alt="imagen producto" />
+                            </td>
+                            <td>{data.categoria}</td>
+                            <td>{data.titulo}</td>
+                            <td className="fw-light text-decoration-line-through">
+                              {data.precioAntiguo ? `$${data.precioAntiguo}` : ''}
+                            </td>
+                            <td className="fw-bold">{`$${data.precioNuevo}`}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </>
+                )}
+              </div>
+            </div>
+
           </div>
         </div>
       </nav>
     </header>
   );
 }
+
 
 export default Header;
