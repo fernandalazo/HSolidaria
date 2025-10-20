@@ -1,9 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Modal } from 'bootstrap';
 
-function LoginModal() {
+function LoginModal({ isOpen, onClose }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+
+  const modalRef = useRef();
+  const modalInstance = useRef(null);
+
+  useEffect(() => {
+    if (modalRef.current) {
+      modalInstance.current = new Modal(modalRef.current, {
+        backdrop: 'static',
+        keyboard: false
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      modalInstance.current?.show();
+    } else {
+      modalInstance.current?.hide();
+    }
+  }, [isOpen]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,15 +44,16 @@ function LoginModal() {
     }
 
     alert('¡Inicio de sesión exitoso!');
+    onClose(); // Cerramos el modal
   };
 
   return (
-    <div className="modal fade" id="loginModal" tabIndex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div className="modal fade" ref={modalRef} id="loginModal" tabIndex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
-            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" className="btn-close" onClick={onClose} aria-label="Close"></button>
           </div>
           <div className="modal-body">
             <form className="row g-3" id="loginForm" onSubmit={handleSubmit} noValidate>

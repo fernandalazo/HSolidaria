@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Modal } from 'bootstrap';
 
-function RegistroModal() {
+function RegistroModal({ isOpen, onClose }) {
   // Un estado para cada campo del formulario
   const [nombre, setNombre] = useState('');
   const [apellido, setApellido] = useState('');
@@ -13,6 +14,26 @@ function RegistroModal() {
   
   // Un estado para manejar el mensaje de error
   const [error, setError] = useState('');
+
+  const modalRef = useRef();
+  const modalInstance = useRef(null);
+
+  useEffect(() => {
+    if (modalRef.current) {
+      modalInstance.current = new Modal(modalRef.current, {
+        backdrop: 'static', // Evita que se cierre al hacer clic fuera
+        keyboard: false // Evita que se cierre con la tecla Esc
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      modalInstance.current?.show();
+    } else {
+      modalInstance.current?.hide();
+    }
+  }, [isOpen]);
 
   // Función que se ejecuta al enviar el formulario
   const handleSubmit = (e) => {
@@ -66,17 +87,17 @@ function RegistroModal() {
 
     // Si todas las validaciones pasan
     alert('¡Registro exitoso!');
-    // Aquí se podría cerrar el modal y limpiar el formulario,
-    // pero Bootstrap se encarga de cerrarlo con el botón y el estado se puede resetear.
+    // Cerramos el modal llamando a la función que recibimos por props
+    onClose();
   };
 
   return (
-    <div className="modal fade" id="registroModal" tabIndex="-1" aria-labelledby="registroModalLabel" aria-hidden="true">
+    <div className="modal fade" ref={modalRef} id="registroModal" tabIndex="-1" aria-labelledby="registroModalLabel" aria-hidden="true">
       <div className="modal-dialog modal-lg">
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title" id="registroModalLabel">Crear una Cuenta</h5>
-            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" className="btn-close" onClick={onClose} aria-label="Close"></button>
           </div>
           <div className="modal-body">
             {/* El formulario ahora llama a handleSubmit */}
