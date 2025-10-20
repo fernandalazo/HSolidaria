@@ -367,3 +367,7 @@ footer .p-3 {
     display: none;
   }
 }
+/* --- Tweaks responsive del logo --- */
+@media (max-width: 400px) {
+  .navbar-logo { height: 36px; }
+}
