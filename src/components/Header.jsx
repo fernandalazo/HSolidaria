@@ -141,7 +141,7 @@ export default function Header({
                     <div className="cart-footer mt-3 pt-3 d-flex flex-column gap-2">
                       <div className="d-flex justify-content-between">
                         <span className="fw-semibold">Total</span>
-                        <span className="fw-bold">{formatCLP(total)}</span>
+                        <span className="fw-bold" aria-live="polite">{formatCLP(total)}</span>
                       </div>
                       <div className="d-flex gap-2">
                         <button
