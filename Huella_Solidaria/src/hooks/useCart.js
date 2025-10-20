@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo } from 'react'
-import {db} from '../data/db' //importo base de datos
+import db from '../data/db.js' //importo base de datos
 
 export const useCart = () => {
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function ProductCard({
-  id, imagenSrc, categoria, titulo, precioAntiguo, precioNuevo, onAdd
+  id, imagenSrc, categoria, titulo, precioAntiguo, precioNuevo, onAdd, addToCart,
 }) {
   return (
     <div className="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -35,6 +35,11 @@ export default function ProductCard({
             >
               Detalles
             </button>
+            <button
+              type="button"
+              className="btn btn-outline-danger btn-sm"
+              onClick={() => addToCart(id)}
+            >Agregar al Carrito</button>
           </div>
         </div>
       </div>

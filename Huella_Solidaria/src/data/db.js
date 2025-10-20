@@ -1,4 +1,4 @@
-export const db = [
+const db = [
     {
         id: 1,
         imagenSrc: '/img/nutrique_baby_cat.webp',
@@ -94,4 +94,5 @@ export const db = [
         precioAntiguo: 23.900,
         precioNuevo: 20.100,
     },
-]
+];
+export default db;
