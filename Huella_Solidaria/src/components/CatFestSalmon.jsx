@@ -1,15 +1,14 @@
-
 import React from 'react';
 import ProductCard from './cards/ProductCard';
 
-export default function VitakraftPoesiePescado({ onAdd }) {
+export default function CatFestSalmon({ onAdd }) {
   const data = {
-    id: 9,
-    imagenSrc: '/img/vitakraft-poesie.webp',
+    id: 5,
+    imagenSrc: '/img/catfest_salmon.webp',
     categoria: 'Gato',
-    titulo: 'Poésie Création Pescado 85g',
-    precioAntiguo: '1.300',
-    precioNuevo: '1.000'
+    titulo: 'Snack Pillows Crema de Salmón 30g',
+    precioAntiguo: '1.500',
+    precioNuevo: '1.250'
   };
   return <ProductCard {...data} onAdd={(id)=>onAdd?onAdd(id):alert(`Agregado: ${data.titulo}`)} />;
 }
