@@ -1,1 +1,4 @@
 Hay muchas carpetas e información entrelazada que me gustaría quitar sin destruir todo el proyecto.
+Por ejemplo, Huella_Solidaria se rerpite más de una vez.
+
+Otra cosa, ya que en application properties hay otro link localhost 8080 obviamente la página y este link están separados. Una aclaración que nos sirve a todos.
