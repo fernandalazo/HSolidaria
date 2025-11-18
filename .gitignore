@@ -1,0 +1,21 @@
+# Ignorar dependencias
+node_modules/
+
+# Archivos de build o pruebas
+coverage/
+dist/
+build/
+
+# Archivos del entorno local
+.env
+.DS_Store
+
+# Archivos del editor
+.vscode/
+.idea/
+
+# Archivos temporales del sistema
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
