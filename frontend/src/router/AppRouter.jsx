@@ -66,11 +66,13 @@ export default function AppRouter() {
           path="/gato"
           element={<GatoPage productos={productos} addToCart={addToCart} />}
         />
-
+        {/* Exóticos usa exoticos.js --> No recibe productos globales */}
+        {/* Borré productos={productos} porque ExoticosPage usa su propio arreglo */}
         <Route
           path="/exoticos"
-          element={<ExoticosPage productos={productos} addToCart={addToCart} />}
+          element={<ExoticosPage addToCart={addToCart} />}
         />
+
 
         <Route
           path="/ofertas"
