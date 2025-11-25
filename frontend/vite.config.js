@@ -5,12 +5,13 @@ export default defineConfig({
   plugins: [react()],
 
   test: {
-    globals: true,
-    environment: "jsdom",
-    setupFiles: "./tests/setup.js",
-    coverage: {
-      provider: "v8",
-      reporter: ["text", "html"],
-    },
+  globals: true,
+  environment: "jsdom",
+  setupFiles: "./tests/setup.js",
+  css: false,
+  coverage: {
+    provider: "v8",
+    reporter: ["text", "html"],
   },
+},
 })
