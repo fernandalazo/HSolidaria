@@ -1,5 +1,4 @@
-// CAMBIO: todos los precios ahora son ENTEROS sin puntos de miles.
-// Motivo: en JS, 22.500 = 22.5 (decimal). Guardamos 22500 y formateamos al renderizar.
+// PRECIOS EN ENTEROS sin puntos de miles
 
 const db = [
   {

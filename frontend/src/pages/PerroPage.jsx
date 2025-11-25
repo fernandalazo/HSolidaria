@@ -1,7 +1,3 @@
-export default function PerroPage() {
-  return <h1>Perros</h1>;
-}
-
 
 // Página de categoría "Perros"
 
