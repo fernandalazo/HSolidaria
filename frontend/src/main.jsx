@@ -6,11 +6,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
-import App from './App.jsx'
+import AppRouter from './router/AppRouter'
 import './styles.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <AppRouter />
   </React.StrictMode>,
 )
