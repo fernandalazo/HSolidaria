@@ -28,13 +28,12 @@ export default function AppRouter() {
     clearCart
   } = useCart();
 
-  //  Modales centralizados
+  // Estado de modales
   const [isLoginModalOpen, setLoginModalOpen] = useState(false);
   const [isRegisterModalOpen, setRegisterModalOpen] = useState(false);
 
   return (
     <BrowserRouter>
-      {/* HEADER con props REALES */}
       <Header
         cart={cart}
         removeFromCart={removeFromCart}
@@ -46,6 +45,7 @@ export default function AppRouter() {
       />
 
       <Routes>
+
         <Route
           path="/"
           element={
@@ -56,9 +56,10 @@ export default function AppRouter() {
           }
         />
 
+        {/* PerroPage usa su propia lista desde dogs.js */}
         <Route
           path="/perro"
-          element={<PerroPage productos={productos} addToCart={addToCart} />}
+          element={<PerroPage addToCart={addToCart} />}
         />
 
         <Route
@@ -87,6 +88,7 @@ export default function AppRouter() {
             <ProductoDetallePage productos={productos} addToCart={addToCart} />
           }
         />
+
       </Routes>
 
       <Footer />
@@ -95,10 +97,12 @@ export default function AppRouter() {
         isOpen={isRegisterModalOpen}
         onClose={() => setRegisterModalOpen(false)}
       />
+
       <LoginModal
         isOpen={isLoginModalOpen}
         onClose={() => setLoginModalOpen(false)}
       />
+
     </BrowserRouter>
   );
 }
