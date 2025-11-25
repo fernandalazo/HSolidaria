@@ -73,17 +73,6 @@ export default function AppRouter() {
           element={<ExoticosPage addToCart={addToCart} />}
         />
 
-
-        <Route
-          path="/ofertas"
-          element={<OfertasPage productos={productos} addToCart={addToCart} />}
-        />
-
-        <Route
-          path="/productos"
-          element={<ProductosPage productos={productos} addToCart={addToCart} />}
-        />
-
         <Route
           path="/producto/:id"
           element={
