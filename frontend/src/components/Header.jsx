@@ -1,6 +1,6 @@
 import React from 'react'
-import { formatCLP } from '../utils/format' // formateador reutilizable
-import { Link } from "react-router-dom";
+import { formatCLP } from '../utils/format'
+import { Link, useLocation } from "react-router-dom"  // Detecta la ruta actual para resaltar el link activo
 
 export default function Header({
   cart,
@@ -11,16 +11,21 @@ export default function Header({
   onOpenLogin,
   onOpenRegister
 }) {
-  //total con reduce 
+
+  // Detecta la ruta actual --> permite aplicar clase "active" en el menú
+  const location = useLocation();
+
+  // Total del carrito 
   const total = cart.reduce((acc, it) => acc + (it.precioNuevo ?? 0) * (it.quantity ?? 1), 0)
 
-  // contar unidades reales del carrito (no solo número de líneas)
-  
+  // Conteo real de items (sumando quantity)
   const itemsCount = cart.reduce((acc, it) => acc + (it.quantity ?? 1), 0)
 
   return (
     <nav className="navbar navbar-expand-lg navbar-apple">
       <div className="container">
+
+        {/* Marca y logo  */}
         <Link to="/" className="navbar-brand d-flex align-items-center gap-2">
           <img
             src="/img/logo.png"
@@ -30,8 +35,7 @@ export default function Header({
           <span className="navbar-brand-text">Huella Solidaria</span>
         </Link>
 
-
-        {/* toggler básico para móviles (no afecta desktop, mejora UX en pantallas pequeñas) */}
+        {/* Toggler móvil */}
         <button
           className="navbar-toggler"
           type="button"
@@ -46,28 +50,63 @@ export default function Header({
 
         <div id="mainNavbar" className="collapse navbar-collapse">
           <ul className="navbar-nav ms-auto align-items-center">
+
+            {/* Menú con estado activo dinámico */}
             <li className="nav-item">
-              <Link to="/" className="nav-link">Inicio</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/perro" className="nav-link">Perros</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/gato" className="nav-link">Gatos</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/exoticos" className="nav-link">Exóticos</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/ofertas" className="nav-link">Ofertas</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/productos" className="nav-link">Productos</Link>
+              <Link
+                to="/"
+                className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
+              >
+                Inicio
+              </Link>
             </li>
 
-            {/* Otros links... */}
+            <li className="nav-item">
+              <Link
+                to="/perro"
+                className={`nav-link ${location.pathname === "/perro" ? "active" : ""}`}
+              >
+                Perros
+              </Link>
+            </li>
 
-            {/* botón del carrito con ícono controlado, badge lavanda y mejoras de accesibilidad */}
+            <li className="nav-item">
+              <Link
+                to="/gato"
+                className={`nav-link ${location.pathname === "/gato" ? "active" : ""}`}
+              >
+                Gatos
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link
+                to="/exoticos"
+                className={`nav-link ${location.pathname === "/exoticos" ? "active" : ""}`}
+              >
+                Exóticos
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link
+                to="/ofertas"
+                className={`nav-link ${location.pathname === "/ofertas" ? "active" : ""}`}
+              >
+                Ofertas
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link
+                to="/productos"
+                className={`nav-link ${location.pathname.startsWith("/productos") ? "active" : ""}`}
+              >
+                Productos
+              </Link>
+            </li>
+
+            {/* CARRITO */}
             <li className="nav-item dropdown">
               <button
                 type="button"
@@ -77,11 +116,9 @@ export default function Header({
                 aria-expanded="false"
                 aria-label={`Abrir carrito. ${itemsCount} artículo${itemsCount === 1 ? '' : 's'} en el carrito`}
               >
-                {/* icono más grueso usando la versión rellena y color controlado por CSS */}
                 <i className="bi bi-cart-fill" aria-hidden="true"></i>
 
                 {itemsCount > 0 && (
-                  /* badge con clase propia para controlar posición y evitar que se corte */
                   <span className="badge rounded-pill cart-count-badge cart-badge">
                     {itemsCount}
                     <span className="visually-hidden">artículos en el carrito</span>
@@ -89,7 +126,6 @@ export default function Header({
                 )}
               </button>
 
-              {/* dropdown estilizado (se mantiene tu maquetación) */}
               <div className="dropdown-menu dropdown-menu-end p-3 cart-dropdown">
                 {cart.length === 0 ? (
                   <div className="text-center text-muted">Tu carrito está vacío</div>
@@ -98,7 +134,6 @@ export default function Header({
                     <div className="d-flex flex-column gap-2" style={{ maxHeight: 360, overflowY: 'auto' }}>
                       {cart.map((item) => (
                         <div key={item.id} className="cart-item">
-                          {/* imagen pequeña y contenida */}
                           <img
                             src={item.imagenSrc}
                             alt={item.titulo}
@@ -107,9 +142,9 @@ export default function Header({
                             loading="lazy"
                           />
 
-                          {/* Info */}
                           <div>
                             <p className="cart-item-title">{item.titulo}</p>
+
                             <div className="cart-item-prices">
                               {item.precioAntiguo != null && (
                                 <span className="old">{formatCLP(item.precioAntiguo)}</span>
@@ -117,64 +152,53 @@ export default function Header({
                               <span className="new">{formatCLP(item.precioNuevo ?? 0)}</span>
                             </div>
 
-                            {/* controles compactos */}
                             <div className="cart-actions d-flex align-items-center gap-2 mt-1">
                               <button
-                                type="button"                                   
+                                type="button"
                                 className="btn btn-sm btn-lavanda-outline"
                                 onClick={() => decreaseQuantity(item.id)}
-                                aria-label={`Disminuir cantidad de ${item.titulo}`}
                               >
                                 -
                               </button>
-                              <span className="px-2" aria-live="polite">{item.quantity ?? 1}</span>
+
+                              <span className="px-2">{item.quantity ?? 1}</span>
+
                               <button
-                                type="button"                                   
+                                type="button"
                                 className="btn btn-sm btn-lavanda"
                                 onClick={() => increaseQuantity(item.id)}
-                                aria-label={`Aumentar cantidad de ${item.titulo}`}
                               >
                                 +
                               </button>
+
                               <button
-                                type="button"                                   
+                                type="button"
                                 className="btn btn-sm btn-outline-secondary ms-2"
                                 onClick={() => removeFromCart(item.id)}
-                                aria-label={`Quitar ${item.titulo} del carrito`}
                               >
-                                <i className="bi bi-trash" aria-hidden="true"></i>
+                                <i className="bi bi-trash"></i>
                               </button>
                             </div>
                           </div>
 
-                          {/* Subtotal por item */}
-                          <div className="text-end">
-                            <div className="fw-semibold">
-                              {formatCLP((item.precioNuevo ?? 0) * (item.quantity ?? 1))}
-                            </div>
+                          <div className="text-end fw-semibold">
+                            {formatCLP((item.precioNuevo ?? 0) * (item.quantity ?? 1))}
                           </div>
                         </div>
                       ))}
                     </div>
 
-                    {/* Footer */}
                     <div className="cart-footer mt-3 pt-3 d-flex flex-column gap-2">
                       <div className="d-flex justify-content-between">
                         <span className="fw-semibold">Total</span>
-                        <span className="fw-bold" aria-live="polite">{formatCLP(total)}</span>
+                        <span className="fw-bold">{formatCLP(total)}</span>
                       </div>
+
                       <div className="d-flex gap-2">
-                        <button
-                          type="button"                                      
-                          className="btn btn-sm btn-outline-secondary flex-grow-1"
-                          onClick={clearCart}
-                        >
+                        <button className="btn btn-sm btn-outline-secondary flex-grow-1" onClick={clearCart}>
                           Vaciar
                         </button>
-                        <button
-                          type="button"                                      
-                          className="btn btn-sm btn-lavanda flex-grow-1"
-                        >
+                        <button className="btn btn-sm btn-lavanda flex-grow-1">
                           Pagar
                         </button>
                       </div>
@@ -184,13 +208,15 @@ export default function Header({
               </div>
             </li>
 
-            {/* Login / Registro */}
+            {/* LOGIN / REGISTRO */}
             <li className="nav-item ms-2">
               <button className="btn btn-sm btn-lavanda-outline" onClick={onOpenLogin}>Ingresar</button>
             </li>
+
             <li className="nav-item ms-2">
               <button className="btn btn-sm btn-lavanda" onClick={onOpenRegister}>Registrarme</button>
             </li>
+
           </ul>
         </div>
       </div>
