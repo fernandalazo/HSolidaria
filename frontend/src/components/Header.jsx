@@ -1,5 +1,6 @@
 import React from 'react'
-import { formatCLP } from '../utils/format' // CAMBIO: usar el formateador reutilizable
+import { formatCLP } from '../utils/format' // formateador reutilizable
+import { Link } from "react-router-dom";
 
 export default function Header({
   cart,
@@ -10,27 +11,27 @@ export default function Header({
   onOpenLogin,
   onOpenRegister
 }) {
-  // CAMBIO: total con reduce 
+  //total con reduce 
   const total = cart.reduce((acc, it) => acc + (it.precioNuevo ?? 0) * (it.quantity ?? 1), 0)
 
-  // CAMBIO: contar unidades reales del carrito (no solo número de líneas).
-  // Motivo: si un producto tiene quantity=3, el badge mostrará 3 (mejor UX).
+  // contar unidades reales del carrito (no solo número de líneas)
+  
   const itemsCount = cart.reduce((acc, it) => acc + (it.quantity ?? 1), 0)
 
   return (
     <nav className="navbar navbar-expand-lg navbar-apple">
       <div className="container">
-        <a className="navbar-brand d-flex align-items-center gap-2" href="/">
-          {/* CAMBIO: logo PNG agregado */}
+        <Link to="/" className="navbar-brand d-flex align-items-center gap-2">
           <img
             src="/img/logo.png"
             alt="Logo Huella Solidaria"
             className="navbar-logo"
           />
           <span className="navbar-brand-text">Huella Solidaria</span>
-        </a>
+        </Link>
 
-        {/* CAMBIO: toggler básico para móviles (no afecta desktop, mejora UX en pantallas pequeñas). */}
+
+        {/* toggler básico para móviles (no afecta desktop, mejora UX en pantallas pequeñas) */}
         <button
           className="navbar-toggler"
           type="button"
@@ -45,9 +46,28 @@ export default function Header({
 
         <div id="mainNavbar" className="collapse navbar-collapse">
           <ul className="navbar-nav ms-auto align-items-center">
+            <li className="nav-item">
+              <Link to="/" className="nav-link">Inicio</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/perro" className="nav-link">Perros</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/gato" className="nav-link">Gatos</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/exoticos" className="nav-link">Exóticos</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/ofertas" className="nav-link">Ofertas</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/productos" className="nav-link">Productos</Link>
+            </li>
+
             {/* Otros links... */}
 
-            {/* CAMBIO: botón del carrito con ícono controlado, badge lavanda y mejoras de accesibilidad */}
+            {/* botón del carrito con ícono controlado, badge lavanda y mejoras de accesibilidad */}
             <li className="nav-item dropdown">
               <button
                 type="button"
@@ -57,11 +77,11 @@ export default function Header({
                 aria-expanded="false"
                 aria-label={`Abrir carrito. ${itemsCount} artículo${itemsCount === 1 ? '' : 's'} en el carrito`}
               >
-                {/* CAMBIO: icono más “grueso” usando la versión rellena y color controlado por CSS */}
+                {/* icono más grueso usando la versión rellena y color controlado por CSS */}
                 <i className="bi bi-cart-fill" aria-hidden="true"></i>
 
                 {itemsCount > 0 && (
-                  /* CAMBIO: badge con clase propia para controlar posición y evitar que se corte */
+                  /* badge con clase propia para controlar posición y evitar que se corte */
                   <span className="badge rounded-pill cart-count-badge cart-badge">
                     {itemsCount}
                     <span className="visually-hidden">artículos en el carrito</span>
@@ -69,7 +89,7 @@ export default function Header({
                 )}
               </button>
 
-              {/* CAMBIO: dropdown estilizado (se mantiene tu maquetación) */}
+              {/* dropdown estilizado (se mantiene tu maquetación) */}
               <div className="dropdown-menu dropdown-menu-end p-3 cart-dropdown">
                 {cart.length === 0 ? (
                   <div className="text-center text-muted">Tu carrito está vacío</div>
@@ -78,7 +98,7 @@ export default function Header({
                     <div className="d-flex flex-column gap-2" style={{ maxHeight: 360, overflowY: 'auto' }}>
                       {cart.map((item) => (
                         <div key={item.id} className="cart-item">
-                          {/* CAMBIO: imagen pequeña y contenida */}
+                          {/* imagen pequeña y contenida */}
                           <img
                             src={item.imagenSrc}
                             alt={item.titulo}
@@ -97,10 +117,10 @@ export default function Header({
                               <span className="new">{formatCLP(item.precioNuevo ?? 0)}</span>
                             </div>
 
-                            {/* CAMBIO: controles más compactos */}
+                            {/* controles compactos */}
                             <div className="cart-actions d-flex align-items-center gap-2 mt-1">
                               <button
-                                type="button"                                   // CAMBIO: evitar submits
+                                type="button"                                   
                                 className="btn btn-sm btn-lavanda-outline"
                                 onClick={() => decreaseQuantity(item.id)}
                                 aria-label={`Disminuir cantidad de ${item.titulo}`}
@@ -109,7 +129,7 @@ export default function Header({
                               </button>
                               <span className="px-2" aria-live="polite">{item.quantity ?? 1}</span>
                               <button
-                                type="button"                                   // CAMBIO: evitar submits
+                                type="button"                                   
                                 className="btn btn-sm btn-lavanda"
                                 onClick={() => increaseQuantity(item.id)}
                                 aria-label={`Aumentar cantidad de ${item.titulo}`}
@@ -117,7 +137,7 @@ export default function Header({
                                 +
                               </button>
                               <button
-                                type="button"                                   // CAMBIO: evitar submits
+                                type="button"                                   
                                 className="btn btn-sm btn-outline-secondary ms-2"
                                 onClick={() => removeFromCart(item.id)}
                                 aria-label={`Quitar ${item.titulo} del carrito`}
@@ -145,14 +165,14 @@ export default function Header({
                       </div>
                       <div className="d-flex gap-2">
                         <button
-                          type="button"                                       // CAMBIO: evitar submits
+                          type="button"                                      
                           className="btn btn-sm btn-outline-secondary flex-grow-1"
                           onClick={clearCart}
                         >
                           Vaciar
                         </button>
                         <button
-                          type="button"                                       // CAMBIO: evitar submits
+                          type="button"                                      
                           className="btn btn-sm btn-lavanda flex-grow-1"
                         >
                           Pagar
