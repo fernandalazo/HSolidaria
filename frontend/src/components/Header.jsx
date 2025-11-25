@@ -100,12 +100,11 @@ export default function Header({
               >
                 <i className="bi bi-cart-fill" aria-hidden="true"></i>
 
-                {itemsCount > 0 && (
-                  <span className="badge rounded-pill cart-count-badge cart-badge">
-                    {itemsCount}
-                    <span className="visually-hidden">artículos en el carrito</span>
-                  </span>
-                )}
+                {/* FIX: siempre mostrar badge, incluso si itemsCount = 0 */}
+                <span className="badge rounded-pill cart-count-badge cart-badge">
+                  {itemsCount}
+                  <span className="visually-hidden">artículos en el carrito</span>
+                </span>
               </button>
 
               <div className="dropdown-menu dropdown-menu-end p-3 cart-dropdown">
