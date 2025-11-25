@@ -1,3 +1,5 @@
+// Test: Productos renderiza todas las tarjetas de productos correctamente
+
 import { render, screen } from "@testing-library/react";
 import Productos from "../src/components/Productos";
 
