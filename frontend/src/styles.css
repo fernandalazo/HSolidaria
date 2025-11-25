@@ -186,15 +186,13 @@ footer .p-3 {
 /* Mantener imágenes contenidas */
 .product-img { object-fit: contain; }
 
-/* (Opcional) Limitar ancho visual en pantallas grandes */
+/* Limitar ancho visual en pantallas grandes */
 @media (min-width: 1200px) {
   .row.g-3 > [class*="col-lg-3"] .card { max-width: 100%; margin-inline: auto; }
 }
 
 
-/* ===================== */
 /* Carrito (Header/Menu) */
-/* ===================== */
 
 /* Tamaño del ícono del carrito controlado */
 
@@ -212,7 +210,7 @@ footer .p-3 {
   border: 1px solid #4a2c4a;
 }
 
-/* Ancho y comportamiento del dropdown del carrito. */
+/* Ancho y comportamiento del dropdown del carrito */
 
 .cart-dropdown {
   min-width: 320px;
@@ -294,7 +292,7 @@ footer .p-3 {
 }
 
 
-/* === ICONO DEL CARRITO: más grande, negro y centrado === */
+/* === ICONO DEL CARRITO === */
 .cart-toggle-btn .bi {
   color: #000;           /* Ícono negro para destacar */
   font-size: 1.75rem;    /* Aumento del tamaño del ícono */
@@ -302,15 +300,15 @@ footer .p-3 {
   vertical-align: middle;
 }
 
-/* Ajustes del botón contenedor */
+/* Ajustes  botón contenedor */
 .cart-toggle-btn {
   position: relative;
-  overflow: visible;     /* Permite que el badge se vea completo */
+  overflow: visible;     
   padding-right: 0.6rem;
   padding-left: 0.6rem;
 }
 
-/* Evitar que la navbar corte el badge */
+/* Evito que navbar corte el badge */
 .navbar .nav-link {
   overflow: visible;
 }
@@ -318,20 +316,20 @@ footer .p-3 {
 /* === BADGE DEL CARRITO (contador) === */
 .cart-badge {
   position: absolute;
-  top: -6px;             /* Subido para que se vea completo */
-  right: -10px;          /* Un poco más afuera para no tapar el ícono */
+  top: -6px;            
+  right: -10px;          
   transform: none;
   z-index: 5;
   background-color: #7b3f7b; /* Lavanda principal */
   color: #fff;
   font-weight: 700;
   border: 1px solid #4a2c4a;
-  font-size: 0.85rem;    /* Un poco más grande para visibilidad */
+  font-size: 0.85rem;   
   padding: 0.25rem 0.45rem;
-  box-shadow: 0 0 6px rgba(123, 63, 123, 0.5); /* CAMBIO: sombra lavanda para destacar */
+  box-shadow: 0 0 6px rgba(123, 63, 123, 0.5); /* sombra lavanda para destacar */
 }
 
-/* Versión responsive: ajusta el badge si la pantalla es muy pequeña */
+/*  responsive --> ajusta el badge si la pantalla es muy pequeña */
 @media (max-width: 576px) {
   .cart-toggle-btn .bi {
     font-size: 1.5rem;
@@ -356,24 +354,47 @@ footer .p-3 {
   transform: scale(1.05);
 }
 
-/* === TEXTO RESPONSIVE === */
+/*  TEXTO RESPONSIVE  */
 .navbar-brand-text {
   white-space: nowrap;
 }
 
-/* Oculta el texto en móviles */
+/* Ocultar el texto en móviles */
 @media (max-width: 575.98px) {
   .navbar-brand-text {
     display: none;
   }
 }
-/* --- Tweaks responsive del logo --- */
+/* Tweaks responsive del logo  */
 @media (max-width: 400px) {
   .navbar-logo { height: 36px; }
 }
 
-/* --- Badge más legible: leve borde y tracking --- */
+/*  Badge más legible --> leve borde y tracking  */
 .cart-badge {
   letter-spacing: 0.2px;
   border-width: 1.25px;
+}
+
+/* Estado activo del navbar      */
+
+/* Resaltar el enlace de la ruta actual */
+
+.navbar-apple .nav-link.active {
+  color: #7b3f7b !important;              /* lavanda fuerte para marcar sección */
+  font-weight: 700;                       /* más contraste visual */
+  border-bottom: 2px solid #7b3f7b;       /* subrayado elegante */
+}
+
+/*  visuales del menú      */
+
+/* Mejora el espacio entre elementos del navbar padding original ni romper layout */
+.navbar-apple .nav-link {
+  margin: 0 4px; 
+}
+
+/* Espaciado vertical extra cuando el menú en móvil */
+.navbar-collapse {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
