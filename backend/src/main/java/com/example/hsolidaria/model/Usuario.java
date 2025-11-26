@@ -9,25 +9,20 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+
 @Entity
-@Table(name = "producto")
+@Table(name = "usuario")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Producto {
+public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(nullable= false, length= 10)
-    private String categoria;
+    private String username;
 
-    @Column(nullable= false, length= 100)
-    private String titulo;
-
-    @Column(nullable= false)
-    private double precioAntiguo;
-
-    @Column(nullable= false)
-    private double precioNuevo;
+    @Column(nullable= false, length= 15)
+    private String password;
 }

@@ -54,16 +54,10 @@
 
 		<!-- DEPENDENCIA LOMBOK -->
 		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
-
-		<dependency>
-    		<groupId>org.projectlombok</groupId>
-    		<artifactId>lombok</artifactId>
-    		<version>1.18.30</version>
-    		<scope>provided</scope>
+	    	<groupId>org.projectlombok</groupId>
+	    	<artifactId>lombok</artifactId>
+	    	<version>1.18.30</version>
+	    	<scope>provided</scope>
 		</dependency>
 		<!-- DEPENDENCIA LOMBOK -->
 
@@ -74,6 +68,24 @@
 			<scope>test</scope>
 		</dependency>
 		<!-- DEPENDENCIA TEST -->
+
+		<!-- DEPENDENCIA API -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-hateoas</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.6.0</version>
+		</dependency>
+		<!-- DEPENDENCIA API -->
 	</dependencies>
 
 	<build>
