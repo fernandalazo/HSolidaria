@@ -3,6 +3,7 @@ package com.example.hsolidaria.model;
 import lombok.*;
 
 import jakarta.persistence.Column;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,8 +22,10 @@ public class Usuario {
     private Integer id;
 
     @Column(nullable= false, length= 10)
+    @NotBlank
     private String username;
 
     @Column(nullable= false, length= 15)
+    @NotBlank
     private String password;
 }
