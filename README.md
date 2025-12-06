@@ -32,6 +32,54 @@ Este repositorio contiene **exclusivamente el frontend**
 
 ---
 
+## ✅ Requisitos previos
+
+Para ejecutar el proyecto de forma local:
+
+- Node.js 18+ (recomendado 18 o superior)
+- npm (se instala junto con Node.js)
+- Editor de código (VS Code recomendado)
+
+---
+
+## 🚀 Instalación y ejecución (desarrollo)
+
+1. Clonar el repositorio
+
+git clone https://github.com/fernandalazo/HSolidaria.git
+cd HSolidaria/frontend
+
+2. Instalar dependencias --> npm install
+
+3. Levantar el servidor de desarrollo --> npm run dev
+
+
+4. Abrir en el navegador la URL que Vite mostrará en consola
+
+ejemplo --> http://localhost:5173/
+
+
+---
+
+## 🧪 Scripts disponibles
+
+Desde la carpeta frontend/ puedes ejecutar:
+
+npm run dev
+Inicia el servidor de desarrollo con recarga en caliente (Hot Module Replacement)
+
+npm run build
+Genera la versión optimizada para producción en la carpeta dist/
+
+npm run preview
+Levanta un servidor para previsualizar el build de producción
+
+npm run test
+Ejecuta las pruebas unitarias configuradas con Vitest
+
+
+---
+
 ## 📁 Estructura general del repositorio
 
 ```text
