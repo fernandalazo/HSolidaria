@@ -77,6 +77,32 @@ Levanta un servidor para previsualizar el build de producción
 npm run test
 Ejecuta las pruebas unitarias configuradas con Vitest
 
+---
+
+## 🧩 Arquitectura de la aplicación
+
+El frontend está organizado bajo una arquitectura de **componentes reutilizables** y **páginas**:
+
+- **Páginas**: representan cada vista principal de la SPA (inicio, catálogo, carrito, donaciones, etc.)
+- **Componentes**: navbar, footer, cards de producto, listados, etc., que se reutilizan en distintas páginas
+- **Ruteo**: se maneja con React Router, permitiendo navegación sin recargar la página
+- **Estado**: el estado del carrito y otros datos globales se maneja mediante **hooks** y props, manteniendo la lógica desacoplada de la vista
+
+Esta estructura facilita el mantenimiento, pruebas y la incorporación de nuevas funcionalidades.
+
+---
+
+## 🔗 Integración con backend (visión general)
+
+Huella Solidaria está pensada para consumir un **API REST** expuesta por un backend Java (Spring Boot):
+
+- El frontend realiza **peticiones HTTP** (GET/POST, etc.) para:
+  - Obtener el listado de productos
+  - Registrar compras y/o donaciones
+- La comunicación se realiza a través de **endpoints REST** definidos en el backend (no incluidos en este repositorio)
+- Esta separación entre frontend y backend permite:
+  - Desplegar cada parte de forma independiente
+  - Escalar o reemplazar el backend sin reescribir el frontend completo
 
 ---
 
@@ -99,29 +125,3 @@ HSolidaria/
 
 
 
----
-
-## 🧩 Arquitectura de la aplicación
-
-El frontend está organizado bajo una arquitectura de **componentes reutilizables** y **páginas**:
-
-- **Páginas**: representan cada vista principal de la SPA (inicio, catálogo, carrito, donaciones, etc.).
-- **Componentes**: navbar, footer, cards de producto, listados, etc., que se reutilizan en distintas páginas.
-- **Ruteo**: se maneja con React Router, permitiendo navegación sin recargar la página.
-- **Estado**: el estado del carrito y otros datos globales se maneja mediante **hooks** y props, manteniendo la lógica desacoplada de la vista.
-
-Esta estructura facilita el mantenimiento, pruebas y la incorporación de nuevas funcionalidades.
-
----
-
-## 🔗 Integración con backend (visión general)
-
-Huella Solidaria está pensada para consumir un **API REST** expuesta por un backend Java (Spring Boot):
-
-- El frontend realiza **peticiones HTTP** (GET/POST, etc.) para:
-  - Obtener el listado de productos.
-  - Registrar compras y/o donaciones.
-- La comunicación se realiza a través de **endpoints REST** definidos en el backend (no incluidos en este repositorio).
-- Esta separación entre frontend y backend permite:
-  - Desplegar cada parte de forma independiente.
-  - Escalar o reemplazar el backend sin reescribir el frontend completo.
