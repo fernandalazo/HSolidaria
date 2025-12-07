@@ -57,7 +57,7 @@ const exoticos = [
     categoria: "Exótico",
     titulo: "Peces Beta Pallets ColorEnhance 40g",
     precioNuevo: 3290,
-  }
+  },
 ];
 
 export default exoticos;
