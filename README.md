@@ -9,11 +9,8 @@ Este repositorio contiene **exclusivamente el frontend**
 
 ## ✨ Funcionalidades principales
 
-- Catálogo de productos para mascotas (listar y filtrar).
-- Visualización de detalle de producto.
+- Catálogo de productos para mascotas
 - Carrito de compras con cálculo de totales.
-- Flujo de compra asociado a donaciones.
-- Sección informativa de fundaciones/aliados solidarios.
 - Navegación entre secciones mediante **React Router**.
 - Estilos responsivos usando **Bootstrap** y **Bootstrap Icons**.
 
