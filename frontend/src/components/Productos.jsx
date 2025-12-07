@@ -2,7 +2,7 @@
 import React from 'react'
 import ProductCard from './ProductCard.jsx' // CAMBIO: extensión explícita
 
-// CAMBIO: componente mínimo que respeta props y pasa el objeto completo a ProductCard
+// Componente mínimo que respeta props y pasa el objeto completo a ProductCard
 export default function Productos({ productos, addToCart }) {
   if (!Array.isArray(productos)) return null
 
