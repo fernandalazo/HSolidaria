@@ -12,7 +12,6 @@ import App from "../App";
 import PerroPage from "../pages/PerroPage";
 import GatoPage from "../pages/GatoPage";
 import ExoticosPage from "../pages/ExoticosPage";
-import OfertasPage from "../pages/OfertasPage";
 import ProductosPage from "../pages/ProductosPage";
 import ProductoDetallePage from "../pages/ProductoDetallePage";
 
@@ -71,12 +70,6 @@ export default function AppRouter() {
         <Route
           path="/exoticos"
           element={<ExoticosPage addToCart={addToCart} />}
-        />
-
-
-        <Route
-          path="/ofertas"
-          element={<OfertasPage productos={productos} addToCart={addToCart} />}
         />
 
         <Route

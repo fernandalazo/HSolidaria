@@ -90,15 +90,6 @@ export default function Header({
 
             <li className="nav-item">
               <Link
-                to="/ofertas"
-                className={`nav-link ${location.pathname === "/ofertas" ? "active" : ""}`}
-              >
-                Ofertas
-              </Link>
-            </li>
-
-            <li className="nav-item">
-              <Link
                 to="/productos"
                 className={`nav-link ${location.pathname.startsWith("/productos") ? "active" : ""}`}
               >
